@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources :deals
-  resources :likes
-  resources :products
-  resources :categories
-  resources :users
+  resources :products, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:index, :show]
+  resources :users, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

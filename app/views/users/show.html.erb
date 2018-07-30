@@ -1,0 +1,11 @@
+<h1>User Show Page</h1>
+<h1><%= @user.name %></h1>
+<h3>User Purchases</h3>
+<% @user.purchases.each do |deal| %>
+  <p><%= deal.product.name %></p>
+<% end %>
+<h3>User Sales</h3>
+<% @user.sales.each do |deal|%>
+  <p><%= deal.product.name  %></p>
+<% end %>
+<p>link_to "Add a product", new_product_path</p>
