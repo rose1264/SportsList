@@ -1,3 +1,4 @@
+
 <h1>Product show page</h1>
 <h2><%= @product.name %></h2>
 <p><%= @product.description %></p>
@@ -5,4 +6,6 @@
 <p><%= @product.location %></p>
 <p>Likes <%= @product.likes.count %></p>
 <p><%= button_to "Delete this product", @product, method: :delete %></p>
-<%= image_tag (@product.avatar_url) %>
+<% @product.avatars.each do |image| %>
+  <img src='<%= image.url %>' >
+<% end %>

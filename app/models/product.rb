@@ -5,5 +5,6 @@ class Product < ApplicationRecord
   has_one :seller, through: :deal, :class_name => 'User'
   has_many :likes
   has_many :users, through: :likes
-  mount_uploader :avatar, AvatarUploader
+  mount_uploaders :avatars, AvatarUploader
+  serialize :avatars, JSON
 end

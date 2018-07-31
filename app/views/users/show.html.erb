@@ -8,4 +8,4 @@
 <% @user.sales.each do |deal|%>
   <p><%= deal.product.name  %></p>
 <% end %>
-<p>link_to "Add a product", new_product_path</p>
+<p><%= link_to "Add a product", new_product_path %></p>
