@@ -5,3 +5,4 @@
 <p><%= @product.location %></p>
 <p>Likes <%= @product.likes.count %></p>
 <p><%= button_to "Delete this product", @product, method: :delete %></p>
+<%= image_tag (@product.avatar_url) %>
