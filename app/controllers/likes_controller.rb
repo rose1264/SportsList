@@ -11,7 +11,11 @@ class LikesController < ApplicationController
   end
 
   def create
-
+    product_id = params[:like][:product_id]
+    user_id = current_user.id
+    # byebug
+    @like = Like.create(product_id: product_id, user_id: user_id)
+    redirect_to product_path(product_id)
   end
 
   private

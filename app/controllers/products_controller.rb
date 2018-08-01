@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     #@product
     @deal = Deal.find_by(product_id: @product.id)
 
-    @like = Like.create(product_id: @product.id, user_id: current_user.id)
+    @like = Like.new
 
 
   end

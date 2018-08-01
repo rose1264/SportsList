@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :create, :destroy, :show]
   resources :deals, only: [:new, :create, :show, :edit, :update]
   root to:'sessions#new'
+  resources :likes, only: [:new, :create]
 end
