@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <h3>Welcome, <%= current_user.name %></h3>
+      <%= button_to "Logout", logout_path, method: :delete %>
+    <% else %>
+      <h3>Welcome! To SportsList</h3>
+      <%= button_to "Sign Up", new_user_path, method: :get %>
+      <%= button_to "Login", new_session_path, method: :get %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

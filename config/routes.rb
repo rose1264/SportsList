@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :products, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :categories, only: [:index, :show, :new, :create]
-  resources :users, only: [:show]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, except: [:index, :show, :edit]
+  get '/profile', to: 'users#show', as: 'profile'
+  get '/profile/edit', to: 'users#edit', as: 'edit_profile'
+  resources :sessions, only: [:new, :create, :destroy]
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
 end

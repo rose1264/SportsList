@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :products, through: :deals
   has_many :likes
   has_many :products, through: :likes
+
+  has_secure_password
 end
