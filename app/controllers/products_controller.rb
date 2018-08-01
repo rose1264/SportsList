@@ -16,7 +16,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    #code
+    @deal = Deal.find_by(product_id: @product.id)
+
   end
 
   def edit

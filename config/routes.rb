@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   resources :products, only: [:new, :create, :destroy, :show]
-  resources :deals, only: [:new, :create, :show]
+  resources :deals, only: [:new, :create, :show, :edit, :update]
+  root to:'sessions#new'
 end

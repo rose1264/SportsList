@@ -1,0 +1,8 @@
+<h1>Congratulation!you made a deal!</h1>
+<h3>Please update the buyer here</h3>
+
+<%= form_for @deal do |f| %>
+  <%= f.label :buyer_name %>
+  <%= f.text_field :buyer_name %>
+  <%= f.submit %>
+<% end %>
