@@ -1,7 +1,14 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
-    @products = Product.all
+    if params[:category]
+      @products = Product.all.select do |product|
+         product.category.name == params[:category]
+         # byebug
+      end
+    else
+      @products = Product.all
+    end
   end
 
   def new
