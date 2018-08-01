@@ -3,13 +3,13 @@
 <p><%= @product.description %></p>
 <p>$<%= @product.price %></p>
 <p><%= @product.location %></p>
-<p><%= @product.likes.count %></p>
+
 
 
 <%= form_for @like, :html => {:id => 'like'} do |f| %>
   <%= hidden_field_tag "like[product_id]", @product.id  %>
   <%= button_tag(:class => "like_button") do %>
-    <i class="fas fa-heart"> </i>
+    <i class="fas fa-heart"> <span><%= @product.likes.count %></span></i>
   <% end %>
 <% end %>
 
