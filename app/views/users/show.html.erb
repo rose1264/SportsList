@@ -16,7 +16,6 @@
       <p><%= link_to deal.product.name, product_path(deal.product)  %></p>
     <% end %>
   <% end %>
-
   <h3>User Sold Items</h3>
   <% @user.sales.each do |deal|%>
     <% if deal.seller_id != deal.buyer_id && deal.product%>

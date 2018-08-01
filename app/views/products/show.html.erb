@@ -3,7 +3,7 @@
 <p><%= @product.description %></p>
 <p>$<%= @product.price %></p>
 <p><%= @product.location %></p>
-<p>Likes <%= @product.likes.count %></p>
+<p>Views <%= @product.likes.count %></p>
 
 <% if current_user == @product.deal.seller%>
   <p><%= button_to "Update the buyer", edit_deal_path(@deal), method: :get %></p>

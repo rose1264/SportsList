@@ -16,7 +16,11 @@ class ProductsController < ApplicationController
   end
 
   def show
+    #@product
     @deal = Deal.find_by(product_id: @product.id)
+
+    @like = Like.create(product_id: @product.id, user_id: current_user.id)
+
 
   end
 
