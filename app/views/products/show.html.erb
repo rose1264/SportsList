@@ -5,9 +5,12 @@
 <p><%= @product.location %></p>
 <p><%= @product.likes.count %></p>
 
-<%= form_for @like do |f| %>
+
+<%= form_for @like, :html => {:id => 'like'} do |f| %>
   <%= hidden_field_tag "like[product_id]", @product.id  %>
-  <%= f.submit "Like!"%>
+  <%= button_tag(:class => "like_button") do %>
+    <i class="fas fa-heart"> </i>
+  <% end %>
 <% end %>
 
 <% if current_user == @product.deal.seller%>
