@@ -4,7 +4,9 @@
 <% if @user.purchases.any? %>
   <h3>User Purchases</h3>
   <% @user.purchases.each do |deal| %>
-    <p><%= deal.product.name %></p>
+    <% if deal.seller_id != deal.buyer_id %>
+      <p><%= deal.product.name %></p>
+    <% end %>
   <% end %>
 <% end %>
 <% if @user.sales.any? %>
@@ -12,5 +14,5 @@
   <% @user.sales.each do |deal|%>
     <p><%= deal.product.name  %></p>
   <% end %>
-  <p><%= link_to "Add a product", new_product_path %></p>
 <% end %>
+<p><%= link_to "Sell a product", new_product_path %></p>
