@@ -1,17 +1,67 @@
-// Place all the styles related to the Products controller here.
+/ Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Hind');
+
+body{
+ background-color: #EAEDED;
+}
 button.like_button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none;
-  color: red;
-  font-size: 20px;
+ background-color: Transparent;
+ background-repeat:no-repeat;
+ border: none;
+ cursor:pointer;
+ overflow: hidden;
+ outline:none;
+ color: red;
+ font-size: 20px;
 }
 
 span {
-  color: black
+ color: black;
+}
+
+.welcome {
+ margin: 20px;
+ padding: 5px;
+}
+
+h1 {
+ text-align: center;
+}
+
+p.user {
+ font-size: 25px;
+ text-decoration: none;
+ font-family: 'Hind', sans-serif;
+ padding: 10px 5px 10px 5px;
+ border: 2px solid #7FB3D5;
+ border-radius: 5px;
+ width: 20%;
+}
+
+p > a {
+ color: #5499C7;
+ text-transform: capitalize;
+}
+
+a:hover {
+ text-decoration: none;
+ transition: .6s;
+ color: #5D6D7E;
+ font-size: 30px;
+}
+
+p:hover{
+ transition: .6s;
+ border-color: #85929E;
+}
+
+form {
+ margin-bottom: 50px;
+}
+
+p#sell {
+ float: left;
+
 }
