@@ -16,6 +16,7 @@
 <% if current_user == @product.deal.seller%>
   <p><%= button_to "Update the buyer", edit_deal_path(@deal), method: :get %></p>
   <p><%= button_to "Delete this product", @product, method: :delete %></p>
+  <p><%= button_to "Back to profile", profile_path, method: :get %></p>
 <% end %>
 <% @product.avatars.each do |image| %>
   <img src='<%= image.url %>' >

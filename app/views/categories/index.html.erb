@@ -1,5 +1,5 @@
 <%= flash[:notice] %>
 <h1>Category Index Page</h1>
 <% @categories.each do |category|%>
-  <%= link_to category.name, products_url%>
+  <%= link_to category.name, products_url(:category => category.name)%>
 <% end %>

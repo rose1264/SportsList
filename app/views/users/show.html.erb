@@ -1,5 +1,8 @@
 <h1>User Show Page</h1>
 <h1><%= @user.name %></h1>
+<% if @user.avatar %>
+    <img src= '<%= @user.avatar.thumb.url %>'>
+<% end %>
 <h3><%= flash[:notice] %></h3>
 <% if @user.purchases.any? %>
   <h3>User Purchases</h3>

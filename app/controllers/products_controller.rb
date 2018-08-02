@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
+    # byebug
     if params[:category]
       @products = Product.all.select do |product|
          product.category.name == params[:category]
-         # byebug
       end
     else
       @products = Product.all
@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
   def destroy
     category = @product.category.id
     @product.destroy
-    redirect_to category_path(category)
+    redirect_to profile_path
   end
 
   private
@@ -60,6 +60,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :location, :category_id, {:avatars => []})
+    params.require(:product).permit(:name, :description, :price, :location, :category_id, {:avatars => []}, :category)
   end
 end

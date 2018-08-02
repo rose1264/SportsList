@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :products, through: :likes
 
   has_secure_password
+  mount_uploader :avatar, AvatarUploader
 end
