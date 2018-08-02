@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_one :deal
   has_many :buyers, through: :deal, :class_name => 'User'
   has_one :seller, through: :deal, :class_name => 'User'
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :users, through: :likes
 
   mount_uploaders :avatars, AvatarUploader

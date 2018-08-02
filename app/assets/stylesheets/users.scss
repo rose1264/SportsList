@@ -12,3 +12,15 @@ h1{
 .deal {
  border :none;
 }
+
+.cover {
+ height: 100px;
+ opacity: 0.7;
+ background-color: #ABB2B9;
+ position: fixed;
+ top: 0;
+ left: 0;
+ padding: 10px;
+ width: 100%;
+ border-bottom: 2px solid black;
+}

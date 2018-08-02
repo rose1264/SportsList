@@ -5,11 +5,19 @@
 <p><%= @product.location %></p>
 
 
-
-<%= form_for @like, :html => {:id => 'like'} do |f| %>
-  <%= hidden_field_tag "like[product_id]", @product.id  %>
-  <%= button_tag(:class => "like_button") do %>
-    <i class="fas fa-heart"> <span><%= @product.likes.count %></span></i>
+<% if !Like.find_by(user_id: current_user.id, product_id: @product.id) %>
+  <%= form_for @like, :html => {:id => 'like'} do %>
+    <%= hidden_field_tag "like[product_id]", @product.id  %>
+    <%= button_tag(:class => "like_button") do %>
+      <span>Likes: <%= @product.likes.count %></span>  <i class="far fa-thumbs-up"> </i>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= form_tag @like, method: :delete do %>
+    <%= hidden_field_tag "like[product_id]", @product.id  %>
+    <%= button_tag(:class => "like_button") do %>
+      <span>Likes: <%= @product.likes.count %></span>  <i class="far fa-thumbs-down"> </i>
+    <% end %>
   <% end %>
 <% end %>
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :products, only: [:index, :new, :create, :destroy, :show]
   resources :deals, only: [:new, :create, :show, :edit, :update]
-  resources :likes, only: [:new, :create]
+  resources :likes, only: [:new, :create, :destroy]
   resources :categories, only: [:index]
 
   root to:'sessions#new'

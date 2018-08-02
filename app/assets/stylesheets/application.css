@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Raleway:400');
+
+ ul {
+  z-index: 1;
+  list-style-type: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 10px;
+ }
+
+ li {
+  display: inline;
+  padding-right: 5px;
+ }
+
+ li > a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: #2980B9;
+ }
+
+ a.no_change:hover{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+ }
+
+ p {
+   text-align: center;
+   margin-bottom: 20px;
+   width: 18%;
+ }
+
+ h1{
+   text-transform: capitalize;
+   margin-bottom: 30px;
+   color: black
+ }
+
+ .deal {
+   border :none;
+ }
+
+ .cover {
+   height: 100px;
+   opacity: 0.7;
+   background-color: #ABB2B9;
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 10px;
+   width: 100%;
+   border-bottom: 2px solid black;
+   z-index: -1;
+ }
