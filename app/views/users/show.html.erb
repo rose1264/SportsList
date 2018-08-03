@@ -13,7 +13,7 @@
   <% if @user.sales.any? %>
     <h3>User Sales</h3>
     <% @user.sales.each do |deal|%>
-      <% if deal.seller_id && deal.product%>
+      <% if deal.seller_id && deal.product && !deal.buyer_id%>
         <p class="user"><%= link_to deal.product.name, product_path(deal.product) %></p>
       <% end %>
     <% end %>
