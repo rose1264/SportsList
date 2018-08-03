@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     # byebug
     if params[:category]
       @products = Product.all.select do |product|
-         product.category.name == params[:category]
+         product.category.name == params[:category].capitalize
       end
     else
       @products = Product.all

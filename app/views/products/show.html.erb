@@ -1,9 +1,10 @@
+<center>
 <h1>Product show page</h1>
 <h2><%= @product.name %></h2>
-<p><%= @product.description %></p>
-<p>$<%= @product.price %></p>
-<p><%= @product.location %></p>
-
+<p class='prod'><%= @product.description %></p>
+<p class='prod'><%=@product.seller.email %></p>
+<p class='prod'>$<%= @product.price %></p>
+<p class='prod'><%= @product.location %></p>
 
 <% if !Like.find_by(user_id: current_user.id, product_id: @product.id) %>
   <%= form_for @like, :html => {:id => 'like'} do %>
@@ -27,5 +28,6 @@
   <p><%= button_to "Back to profile", profile_path, method: :get %></p>
 <% end %>
 <% @product.avatars.each do |image| %>
-  <img src='<%= image.url %>' >
+  <img src='<%= image.url %>'>
 <% end %>
+</center>

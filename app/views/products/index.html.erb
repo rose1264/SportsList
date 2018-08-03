@@ -1,14 +1,21 @@
-<h1>Products Index Page</h1>
-<%= form_tag(products_path, method: :get) do %>
-  <h3><%= label_tag :category, "Search category for products:" %><br></h3>
-  <%= text_field_tag :category %>
-  <%= submit_tag "Search",name: nil %>
-<% end %>
-<% @products.each do |product| %>
-  <% if product.deal && !product.deal.buyer_id %>
-    <% product.avatars.each do |image| %>
-      <img src='<%= image.demo.url %>' >
+<center>
+  <h1>Products Index Page</h1>
+  <div class='wrapper'>
+    <div class='container'>
+      <%= form_tag(products_path, method: :get) do %>
+      <h3><%= label_tag :category, "Search category for products:" %><br></h3>
+      <%= text_field_tag :category %>
+      <%= submit_tag "Search",name: nil %>
     <% end %>
-    <p><%= link_to product.name, product %></p>
-  <% end %>
-<% end %>
+    <% @products.each do |product| %>
+      <% if product.deal && !product.deal.buyer_id %>
+          <img class='product_img'  src='<%= product.avatars[0].demo.url %>' >
+        <p><%= link_to product.name, product %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+</center>
+<p id='sell'><%= link_to "Sell a product", new_product_path %>
+<i class="fas fa-dollar-sign"></i>
+</p>

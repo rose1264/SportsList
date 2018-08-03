@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if logged_in? %>
-      <h3>Welcome, <%= current_user.name %></h3>
-      <%= button_to "Logout", logout_path, method: :delete %>
+      <div class='cover'>
+        <div class="welcome">
+          <h3>Welcome,
+            <%= current_user.name %></h3>
+          <%= button_to 'Sign Out', logout_path, method: :delete %>
+        </div>
+      </div>
+      <ul>
+        <li><a href='/profile'>Sportslist</a></li><li><a class='no_change'>|</a></li>
+        <li><a href='/categories'>Categories</a></li><li><a class='no_change'>|</a></li>
+        <li><a href='/products'>Products</a></li>
+      </ul>
     <% else %>
       <h3>Welcome! To SportsList</h3>
       <%= button_to "Sign Up", new_user_path, method: :get %>
       <%= button_to "Login", new_session_path, method: :get %>
     <% end %>
-    <%= link_to "SportList", profile_path %>
-    <%= link_to "Category", categories_path %>
-    <%= link_to "Product", products_path %>
-
     <%= yield %>
   </body>
 </html>

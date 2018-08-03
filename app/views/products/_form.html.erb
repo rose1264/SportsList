@@ -1,14 +1,18 @@
-<%= form_for @product do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %><br>
-  <%= f.label :price %><br>
-  <%= f.number_field :price %><br>
-  <%= f.label :location %><br>
-  <%= f.text_field :location %><br>
-  <%= f.label "Category" %><br>
-  <%= f.collection_select :category_id, Category.all, :id, :name %><br>
-  <%= f.file_field :avatars, multiple: true %>
-  <%= f.submit %>
-<% end %>
+<center>
+  <%= form_for @product do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br>
+    <%= f.label :price %><br>
+    <%= f.number_field :price %><br>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %><br>
+    <%= f.label "Category" %><br>
+    <div class='custom_select'>
+    <%= f.collection_select :category_id, Category.all, :id, :name %><br>
+    </div>
+    <%= f.file_field :avatars, multiple: true %>
+    <%= f.submit %>
+  <% end %>
+</center>
