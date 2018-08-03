@@ -5,7 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
-running = Category.create(name: "Running")
-sneakers = Product.create(name: "Sneakers", category_id: running.id)
+Category.create!(name: "Running")
+Category.create!(name: "Golf")
+Category.create!(name: "Camping")
+Category.create!(name: "Cycling")
+Category.create!(name: "Yoga")
+Category.create!(name: "Hiking")
+Category.create!(name: "Badminton")
+Category.create!(name: "Fitness")
+Category.create!(name: "Basketball")

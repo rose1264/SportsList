@@ -15,9 +15,9 @@
     <% if logged_in? %>
       <div class='cover'>
         <div class="welcome">
-          <h3>Welcome,
-            <%= current_user.name %></h3>
-          <%= button_to 'Sign Out', logout_path, method: :delete %>
+          <h3><%= current_user.name %><%= image_tag current_user.avatar_url(:thumb) %></h3>
+            <%= button_to 'Sign Out', logout_path, method: :delete %>
+
         </div>
       </div>
       <ul>

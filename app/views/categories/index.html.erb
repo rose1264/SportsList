@@ -1,5 +1,11 @@
-<%= flash[:notice] %>
-<h1>Category Index Page</h1>
-<% @categories.each do |category|%>
-  <%= link_to category.name, products_url(:category => category.name)%>
-<% end %>
+<center>
+  <div class='wrapper'>
+    <div class='container'>
+      <%= flash[:notice] %>
+      <h1>Category Index Page</h1>
+      <% @categories.each do |category|%>
+        <p class="category"><%= link_to category.name, products_url(:category => category.name)%></p>
+      <% end %>
+    </div>
+  </div>
+</center

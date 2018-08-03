@@ -1,7 +1,6 @@
 <center>
-  <h1>User Show Page</h1>
-  <h1><%= @user.name %></h1>
-  <h3 class='notice'><%= flash[:notice] %></h3>
+  <p class='notice'><%= flash[:notice] %></p>
+  <h1>Welcome! <%= @user.name %></h1>
   <% if @user.purchases.any? %>
     <h3>User Purchases</h3>
     <% @user.purchases.each do |deal| %>
